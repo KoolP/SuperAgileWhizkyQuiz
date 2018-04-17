@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 class QuizModel {
     
     private var chosenQuestion: NSDictionary!
@@ -33,7 +34,7 @@ class QuizModel {
     
     func getQuestion() -> NSDictionary {
         
-        if ((self.chosenQuestion) != nil) {
+        if (self.chosenQuestion != nil) {
             self.questionArray.remove(self.chosenQuestion)
         }
         
@@ -49,7 +50,7 @@ class QuizModel {
     }
     
     func generateQuestions() {
-        // Milja's questions
+        //var questions: Questions = Questions()
     }
     
 }
