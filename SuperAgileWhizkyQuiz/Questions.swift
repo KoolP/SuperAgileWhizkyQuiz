@@ -8,4 +8,14 @@
 
 import Foundation
 
-//TEST
+let questions : [String : Any] = [
+    "Question": "Fråga",
+    "Alternatives":
+        [
+            "One",
+            "Two",
+            "Three",
+            "Four"
+        ],
+    "Answer": "One"]
+
