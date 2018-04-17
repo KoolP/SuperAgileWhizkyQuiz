@@ -6,7 +6,7 @@
 //  Copyright © 2018 Patrik Rikama Hinnenberg. All rights reserved.
 //
 
-//WTF1 firs init commit
+//WTF1 firs init commit, second change
 
 import UIKit
 
