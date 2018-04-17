@@ -14,15 +14,22 @@ class QuizModel {
     
     private var questionArray: NSMutableArray!
     
-    /*-(BOOL)isCorrectGuess:(NSString*)guess :(NSDictionary*)question{
-     BOOL correctGuessed = NO;
-     if ([guess isEqualToString:question[@"correctAnswer"]]) {
-     correctGuessed = YES;
-     } else {
-     correctGuessed = NO;
-     }
-     return correctGuessed;
-     }*/
+    init() {
+        generateQuestions()
+    }
+    
+    func isCorrectGuess(guess: String, question: NSDictionary) -> Bool {
+        
+        var correctGuessed: Bool = false
+        
+        if guess == (question["correctAnswer"] as! String) {
+            correctGuessed = true
+        } else {
+            correctGuessed = false
+        }
+        
+        return correctGuessed
+    }
     
     func getQuestion() -> NSDictionary {
         
