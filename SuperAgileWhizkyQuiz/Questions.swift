@@ -8,7 +8,6 @@
 
 import Foundation
 
-//Array of dictionaries
 let questions = [
                 [
                 "Question": "Laphroaig Distillery produces a special Single Malt that is matured in special, smaller casks. What is this whisky called?",
