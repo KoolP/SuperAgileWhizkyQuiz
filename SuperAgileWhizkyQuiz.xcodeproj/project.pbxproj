@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		180D23AA20860AAB00CB3582 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180D23A920860AAB00CB3582 /* QuizModel.swift */; };
+		659B2A5C20861A3B0055E50E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659B2A5B20861A3B0055E50E /* QuizViewController.swift */; };
 		94ADFAC02086059800EE5F36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ADFABF2086059800EE5F36 /* AppDelegate.swift */; };
 		94ADFAC22086059800EE5F36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94ADFAC12086059800EE5F36 /* ViewController.swift */; };
 		94ADFAC52086059800EE5F36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94ADFAC32086059800EE5F36 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		180D23A920860AAB00CB3582 /* QuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
+		659B2A5B20861A3B0055E50E /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		94ADFABC2086059800EE5F36 /* SuperAgileWhizkyQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperAgileWhizkyQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94ADFABF2086059800EE5F36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94ADFAC12086059800EE5F36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				94ADFACB2086059800EE5F36 /* Info.plist */,
 				180D23A920860AAB00CB3582 /* QuizModel.swift */,
 				A5107CBF20860E8E001E178E /* Questions.swift */,
+				659B2A5B20861A3B0055E50E /* QuizViewController.swift */,
 			);
 			path = SuperAgileWhizkyQuiz;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94ADFAC22086059800EE5F36 /* ViewController.swift in Sources */,
+				659B2A5C20861A3B0055E50E /* QuizViewController.swift in Sources */,
 				A5107CC020860E8E001E178E /* Questions.swift in Sources */,
 				180D23AA20860AAB00CB3582 /* QuizModel.swift in Sources */,
 				94ADFAC02086059800EE5F36 /* AppDelegate.swift in Sources */,
