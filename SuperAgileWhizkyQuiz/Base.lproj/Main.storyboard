@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SuperAgileWhizkyQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="SuperAgileWhizkyQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,6 +47,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="PlayAgainBtn?"/>
+                                <connections>
+                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqJ-9i-ptJ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QuestionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQG-C4-OWk">
                                 <rect key="frame" x="45" y="83" width="284" height="123"/>
@@ -69,6 +72,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="NextQuestionBtn"/>
+                                <connections>
+                                    <action selector="newQuestionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGn-kX-4I4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ScoreLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-Kq-b2e">
                                 <rect key="frame" x="144" y="517" width="86" height="21"/>
@@ -82,6 +88,16 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="firstChoice" destination="52a-8b-zd2" id="MCL-zQ-Vuq"/>
+                        <outlet property="fourthChoice" destination="vUf-s6-Z8q" id="7rv-JK-vxr"/>
+                        <outlet property="playAgainButton" destination="ZdB-KI-IZo" id="xUr-Wh-giG"/>
+                        <outlet property="questionLabel" destination="xQG-C4-OWk" id="q1B-XL-9XJ"/>
+                        <outlet property="rightOrWrongLabel" destination="TVv-0X-XhT" id="JNG-oQ-NWl"/>
+                        <outlet property="scoreLabel" destination="wwA-Kq-b2e" id="tjg-Ws-OwJ"/>
+                        <outlet property="secondChoice" destination="Pxl-7w-S8B" id="y6u-SC-LzK"/>
+                        <outlet property="thirdChoice" destination="GTh-1A-fvW" id="Eb4-Ze-kIO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
