@@ -142,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6580923020860B2C00C0B73E /* QuizViewController.swift in Sources */,
 				94ADFAC22086059800EE5F36 /* ViewController.swift in Sources */,
 				A5107CC020860E8E001E178E /* Questions.swift in Sources */,
 				180D23AA20860AAB00CB3582 /* QuizModel.swift in Sources */,
