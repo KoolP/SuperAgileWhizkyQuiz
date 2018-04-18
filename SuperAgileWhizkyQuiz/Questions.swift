@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+//Array w/ dictionaries
+let questions = [
+                [
+                "Question": "Laphroaig Distillery produces a special Single Malt that is matured in special, smaller casks. What is this whisky called?",
+                "Answer01": "Tripple Wood",
+                "Answer02": "Quarter Cask",
+                "Answer03": "Select",
+                "Answer04": "Cask Strength",
+                "Correct": "Quarter Cask"
+                ]
+                ]
