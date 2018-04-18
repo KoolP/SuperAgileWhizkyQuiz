@@ -11,9 +11,9 @@ import Foundation
 
 class QuizModel {
     
-    private var chosenQuestion: NSDictionary!
+    private var chosenQuestion: Dictionary<String,String>!
     
-    private var questionArray: NSMutableArray!
+    private var questionArray: Array<Dictionary<String,String>>!
     
     init() {
         generateQuestions()
@@ -32,25 +32,25 @@ class QuizModel {
         return correctGuessed
     }
     
-    func getQuestion() -> NSDictionary {
-        
-        if (self.chosenQuestion != nil) {
-            self.questionArray.remove(self.chosenQuestion)
-        }
+    func getQuestion() -> Dictionary<String,String> {
         
         if (self.questionArray.count == 0) {
             generateQuestions()
         }
         
         let indexx: Int = Int(arc4random_uniform(UInt32(self.questionArray.count)))
+        self.chosenQuestion = self.questionArray[indexx]
         
-        self.chosenQuestion = self.questionArray[indexx] as! NSDictionary
+        self.questionArray.remove(at: indexx)
         
         return self.chosenQuestion
     }
     
     func generateQuestions() {
-        //var questions: Questions = Questions()
+        
+        let newQuestion = questions
+        self.questionArray = [newQuestion]
+        
     }
     
 }
