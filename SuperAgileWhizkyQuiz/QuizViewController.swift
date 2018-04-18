@@ -13,9 +13,53 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
 
+        //#warning load new question here
+        loadNewQuestion()
+        
+    }
+    
+    func loadNewQuestion() {
+        
+    }
+    
+    func makeGuess() {
+        
+    }
+    
+    //#warning hide and disable buttons
+    func hideAnswer() {
+        hideAnswerButtons()
+        disableAnswerButtons()
+        
+    }
+    
+    //#warning show and enable buttons
+    func showAnswer() {
+        showAnswerButtons()
+        enableAnswerbuttons()
+    }
+    
+    //Hide buttons
+    func hideAnswerButtons() {
+        
+    }
+    
+    //Show buttons
+    func showAnswerButtons() {
+        
+    }
+    
+    //disable answer buttons
+    func disableAnswerButtons() {
+        
+    }
+    
+    //Enable answer buttons
+    func enableAnswerbuttons() {
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
