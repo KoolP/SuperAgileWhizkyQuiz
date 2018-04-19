@@ -11,19 +11,19 @@ import Foundation
 
 class QuizModel {
     
-    private var chosenQuestion: [[String:String]]!
+    private var chosenQuestion: [String:String]!
     
-    private var questionArray: [[[String:String]]]!
+    private var questionArray: [[String:String]]!
     
     init() {
         generateQuestions()
     }
     
-    func isCorrectGuess(guess: String, question: [[String:String]]) -> Bool {
+    func isCorrectGuess(guess: String, question: [String:String]) -> Bool {
         
         var correctGuessed: Bool = false
         
-        if guess == question[5]["Correct"] {
+        if guess == question["Correct"] {
             correctGuessed = true
         } else {
             correctGuessed = false
@@ -32,7 +32,7 @@ class QuizModel {
         return correctGuessed
     }
     
-    func getQuestion() -> [[String:String]] {
+    func getQuestion() -> [String:String] {
         
         if (self.questionArray.count == 0) {
             generateQuestions()
@@ -49,7 +49,7 @@ class QuizModel {
     func generateQuestions() {
         
         let newQuestion = questions
-        self.questionArray = [newQuestion]
+        self.questionArray = newQuestion
         
     }
     
