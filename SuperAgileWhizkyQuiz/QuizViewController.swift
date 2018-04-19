@@ -9,6 +9,7 @@
 import UIKit
 
 class QuizViewController: UIViewController {
+    
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var rightOrWrongLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
@@ -20,38 +21,81 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var playAgainButton: UIButton!
     
     var scoreCounter : Int!
+    var questionCounter : Int!
+    var quizModel : QuizModel!
+    var theQuestion = [String:String]()
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        scoreCounter = 0
-
+        
+        
 
         //#warning load new question here
         loadNewGame()
-        
     }
     
+    func loadNewGame() {
+        quizModel = QuizModel()
+        scoreCounter = 0
+        questionCounter = 0
+        showButtons()
+        rightOrWrongLabel.text = ""
+        loadNewQuestionAndAnswers()
+    }
     
     @IBAction func newQuestionButton(_ sender: UIButton) {
         loadNewQuestionAndAnswers()
+        rightOrWrongLabel.text = ""
     }
     
     func loadNewQuestionAndAnswers() {
         //put in QuizModels randomizer with existing game
+        showQuestion()
         showButtons()
+    }
+    
+    func showQuestion() {
+        theQuestion = quizModel.getQuestion()
+        questionLabel.text = theQuestion["Question"]
+        firstChoice.titleLabel?.text = theQuestion["Answer01"]
+        secondChoice.titleLabel?.text = theQuestion["Answer02"]
+        thirdChoice.titleLabel?.text = theQuestion["Answer03"]
+        fourthChoice.titleLabel?.text = theQuestion["Answer04"]
     }
     
     @IBAction func playAgainButton(_ sender: UIButton) {
         loadNewGame()
     }
     
-    func loadNewGame() {
-        //put in QuizModels randomizer on all questions
-        showButtons()
+    
+    @IBAction func answerPressed(_ sender: Any) {
+        makeGuess(sender as! UIButton)
     }
     
-    func makeGuess() {
+    func makeGuess(_ sender : UIButton) {
+        var isCorrect : Bool
+        questionCounter = questionCounter + 1
+        
+        let theGuess = sender.titleLabel?.text
+        isCorrect = quizModel.isCorrectGuess(guess: theGuess!, question: theQuestion)
+        
+        if isCorrect {
+            rightOrWrongLabel.text = "WÖ, rätt!!!!"
+            addScoreCount()
+        } else {
+            rightOrWrongLabel.text = "Nope"
+        }
+        
+        disableAnswerButtons()
+        
+        if questionCounter > 4 {
+            scoreLabel.text = "Du har \(scoreCounter) poäng av \(questionCounter) frågor. Kul för dig."
+        }
+        
+        if questionCounter == 10 {
+            hideButtons()
+        }
         
     }
     

@@ -27,37 +27,11 @@
                                 </constraints>
                                 <state key="normal" title="PlayAgainBtn?"/>
                                 <connections>
-                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fqJ-9i-ptJ"/>
+                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m55-eZ-9IT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QuestionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQG-C4-OWk">
-                                <rect key="frame" x="45" y="83" width="284" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RightOrWrongLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVv-0X-XhT">
-                                <rect key="frame" x="45" y="413" width="284" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gE-re-nDp">
-                                <rect key="frame" x="94" y="451" width="186" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="NextQuestionBtn"/>
-                                <connections>
-                                    <action selector="newQuestionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DGn-kX-4I4"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ScoreLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-Kq-b2e">
-                                <rect key="frame" x="144" y="517" width="86" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuestionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQG-C4-OWk">
+                                <rect key="frame" x="16" y="50" width="343" height="179"/>
                                 <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xQG-C4-OWk" secondAttribute="height" multiplier="343:179" id="nRM-Z7-lTn"/>
@@ -76,11 +50,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="132.5" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ans1Btn"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E3D-RY-gGc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pxl-7w-S8B">
                                                 <rect key="frame" x="142.5" y="0.0" width="132.5" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ans2Btn"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h7N-5o-5SF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -91,11 +71,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="132.5" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ans3Btn"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uPa-84-VnR"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUf-s6-Z8q">
                                                 <rect key="frame" x="142.5" y="0.0" width="132.5" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Ans4Btn"/>
+                                                <connections>
+                                                    <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HgR-dt-m6A"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -115,6 +101,9 @@
                                         <rect key="frame" x="29" y="63.5" width="117" height="53"/>
                                         <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="NextQuestionBtn"/>
+                                        <connections>
+                                            <action selector="newQuestionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G7F-2w-RSq"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ScoreLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-Kq-b2e">
                                         <rect key="frame" x="44.5" y="126.5" width="86" height="53.5"/>
@@ -146,14 +135,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="firstChoice" destination="52a-8b-zd2" id="MCL-zQ-Vuq"/>
-                        <outlet property="fourthChoice" destination="vUf-s6-Z8q" id="7rv-JK-vxr"/>
-                        <outlet property="playAgainButton" destination="ZdB-KI-IZo" id="xUr-Wh-giG"/>
-                        <outlet property="questionLabel" destination="xQG-C4-OWk" id="q1B-XL-9XJ"/>
-                        <outlet property="rightOrWrongLabel" destination="TVv-0X-XhT" id="JNG-oQ-NWl"/>
-                        <outlet property="scoreLabel" destination="wwA-Kq-b2e" id="tjg-Ws-OwJ"/>
-                        <outlet property="secondChoice" destination="Pxl-7w-S8B" id="y6u-SC-LzK"/>
-                        <outlet property="thirdChoice" destination="GTh-1A-fvW" id="Eb4-Ze-kIO"/>
+                        <outlet property="firstChoice" destination="52a-8b-zd2" id="9vn-mQ-Gb9"/>
+                        <outlet property="fourthChoice" destination="vUf-s6-Z8q" id="mIm-Cp-bkG"/>
+                        <outlet property="playAgainButton" destination="ZdB-KI-IZo" id="afp-kF-t0A"/>
+                        <outlet property="questionLabel" destination="xQG-C4-OWk" id="sxt-kk-iGP"/>
+                        <outlet property="rightOrWrongLabel" destination="TVv-0X-XhT" id="2GH-5Y-7SG"/>
+                        <outlet property="scoreLabel" destination="wwA-Kq-b2e" id="oyw-5c-yYV"/>
+                        <outlet property="secondChoice" destination="Pxl-7w-S8B" id="r7q-VH-zoG"/>
+                        <outlet property="thirdChoice" destination="GTh-1A-fvW" id="9Xm-ea-4EA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
