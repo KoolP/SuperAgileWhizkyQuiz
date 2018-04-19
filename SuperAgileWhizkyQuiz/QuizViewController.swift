@@ -13,6 +13,7 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         //#warning load new question here
         loadNewQuestion()
         
@@ -59,7 +60,6 @@ class QuizViewController: UIViewController {
         
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

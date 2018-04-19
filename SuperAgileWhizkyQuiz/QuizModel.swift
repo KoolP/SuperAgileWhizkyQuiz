@@ -19,11 +19,11 @@ class QuizModel {
         generateQuestions()
     }
     
-    func isCorrectGuess(guess: String, question: NSDictionary) -> Bool {
+    func isCorrectGuess(guess: String, question: [[String:String]]) -> Bool {
         
         var correctGuessed: Bool = false
         
-        if guess == (question["correctAnswer"] as! String) {
+        if guess == question[5]["Correct"] {
             correctGuessed = true
         } else {
             correctGuessed = false
