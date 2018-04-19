@@ -72,6 +72,9 @@ class QuizViewController: UIViewController {
             nextQuestionButton.isHidden = true
             
             playAgainButton.setTitle("Play again?", for: .normal)
+            //playAgainButton.layer.zPosition = 1
+            //playAgainButton.bringSubview(toFront: self.view)
+            self.view.bringSubview(toFront: playAgainButton)
             
             if scoreCounter < 3 {
                 questionLabel.text = "U suck"
