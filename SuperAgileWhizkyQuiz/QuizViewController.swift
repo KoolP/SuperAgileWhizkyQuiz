@@ -22,6 +22,7 @@ class QuizViewController: UIViewController {
     
     var scoreCounter : Int!
     var questionCounter : Int!
+    var hasGuessed : Bool = false
     var quizModel : QuizModel!
     var theQuestion = [String:String]()
     
@@ -45,11 +46,14 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func newQuestionButton(_ sender: UIButton) {
-        loadNewQuestionAndAnswers()
-        rightOrWrongLabel.text = ""
+        if hasGuessed {
+            loadNewQuestionAndAnswers()
+            rightOrWrongLabel.text = ""
+        }
     }
     
     func loadNewQuestionAndAnswers() {
+        hasGuessed = false
         //put in QuizModels randomizer with existing game
         showQuestion()
         showButtons()
@@ -70,6 +74,7 @@ class QuizViewController: UIViewController {
     
     
     @IBAction func answerPressed(_ sender: Any) {
+        hasGuessed = true
         makeGuess(sender as! UIButton)
     }
     
