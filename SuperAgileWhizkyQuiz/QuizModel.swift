@@ -11,19 +11,19 @@ import Foundation
 
 class QuizModel {
     
-    private var chosenQuestion: Dictionary<String,String>!
+    private var chosenQuestion: [[String:String]]!
     
-    private var questionArray: Array<Dictionary<String,String>>!
+    private var questionArray: [[[String:String]]]!
     
     init() {
         generateQuestions()
     }
     
-    func isCorrectGuess(guess: String, question: NSDictionary) -> Bool {
+    func isCorrectGuess(guess: String, question: [[String:String]]) -> Bool {
         
         var correctGuessed: Bool = false
         
-        if guess == (question["correctAnswer"] as! String) {
+        if guess == question[5]["Correct"] {
             correctGuessed = true
         } else {
             correctGuessed = false
@@ -32,7 +32,7 @@ class QuizModel {
         return correctGuessed
     }
     
-    func getQuestion() -> Dictionary<String,String> {
+    func getQuestion() -> [[String:String]] {
         
         if (self.questionArray.count == 0) {
             generateQuestions()
