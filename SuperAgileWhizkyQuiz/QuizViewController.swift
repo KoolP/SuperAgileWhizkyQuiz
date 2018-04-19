@@ -31,7 +31,21 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        firstChoice.designButtons(button: firstChoice)
+        secondChoice.designButtons(button: secondChoice)
+        thirdChoice.designButtons(button: thirdChoice)
+        fourthChoice.designButtons(button: fourthChoice)
         
+        firstChoice.setColors(button: firstChoice)
+        secondChoice.setColors(button: secondChoice)
+        thirdChoice.setColors(button: thirdChoice)
+        fourthChoice.setColors(button: fourthChoice)
+        questionLabel.designLabel2(label: questionLabel)
+        
+        nextQuestionButton.setColors(button: nextQuestionButton)
+        
+        rightOrWrongLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
+        //scoreLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
 
         //#warning load new question here
         loadNewGame()
@@ -136,7 +150,7 @@ class QuizViewController: UIViewController {
         disableAnswerButtons()
         
         if questionCounter > 0 {
-            scoreLabel.text = "Du har \(scoreCounter) poäng av \(questionCounter) frågor. Kul för dig."
+            scoreLabel.text = "Du har \(scoreCounter) poäng av \(questionCounter) frågor."
         }
     }
     
