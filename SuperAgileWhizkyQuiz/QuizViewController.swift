@@ -19,9 +19,10 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var thirdChoice: UIButton!
     @IBOutlet weak var fourthChoice: UIButton!
     @IBOutlet weak var playAgainButton: UIButton!
+    @IBOutlet weak var nextQuestionButton: UIButton!
     
-    var scoreCounter : Int!
-    var questionCounter : Int!
+    var scoreCounter : Int = 0
+    var questionCounter : Int = 0
     var quizModel : QuizModel!
     var theQuestion = [String:String]()
     
@@ -36,17 +37,42 @@ class QuizViewController: UIViewController {
     }
     
     func loadNewGame() {
+        print("Hello, I'm into loadNewGame :)))))")
         quizModel = QuizModel()
         scoreCounter = 0
         questionCounter = 0
-        showButtons()
+        //showButtons()
         rightOrWrongLabel.text = ""
         loadNewQuestionAndAnswers()
+        print("ScoreCounter: \(scoreCounter), QuestionCounter: \(questionCounter)")
+        scoreLabel.isHidden = false
+        nextQuestionButton.isHidden = false
+        
+        
     }
     
     @IBAction func newQuestionButton(_ sender: UIButton) {
         loadNewQuestionAndAnswers()
+        questionCounter = questionCounter + 1
         rightOrWrongLabel.text = ""
+        print("QuestionCounter: \(questionCounter)")
+        
+        if questionCounter == 10 {
+            hideButtons()
+            //scoreLabel.isHidden = true
+            nextQuestionButton.isHidden = true
+            
+            playAgainButton.setTitle("Play again?", for: .normal)
+            
+            if scoreCounter < 3 {
+                questionLabel.text = "U suck"
+            } else if scoreCounter > 3 && scoreCounter < 6 {
+                questionLabel.text = "U ok"
+            } else {
+                questionLabel.text = "FLINK!"
+            }
+        }
+
     }
     
     func loadNewQuestionAndAnswers() {
@@ -58,13 +84,19 @@ class QuizViewController: UIViewController {
     func showQuestion() {
         theQuestion = quizModel.getQuestion()
         questionLabel.text = theQuestion["Question"]
-        firstChoice.titleLabel?.text = theQuestion["Answer01"]
-        secondChoice.titleLabel?.text = theQuestion["Answer02"]
-        thirdChoice.titleLabel?.text = theQuestion["Answer03"]
-        fourthChoice.titleLabel?.text = theQuestion["Answer04"]
+        firstChoice.setTitle(theQuestion["Answer01"], for: .normal)
+        secondChoice.setTitle(theQuestion["Answer02"], for: .normal)
+        thirdChoice.setTitle(theQuestion["Answer03"], for: .normal)
+        fourthChoice.setTitle(theQuestion["Answer04"], for: .normal)
+        //firstChoice.titleLabel?.text = theQuestion["Answer01"]
+        //secondChoice.titleLabel?.text = theQuestion["Answer02"]
+        //thirdChoice.titleLabel?.text = theQuestion["Answer03"]
+        //fourthChoice.titleLabel?.text = theQuestion["Answer04"]
+        print("The question: \(theQuestion)")
     }
     
     @IBAction func playAgainButton(_ sender: UIButton) {
+        print("Pressing play again button works just fine")
         loadNewGame()
     }
     
@@ -75,7 +107,6 @@ class QuizViewController: UIViewController {
     
     func makeGuess(_ sender : UIButton) {
         var isCorrect : Bool
-        questionCounter = questionCounter + 1
         
         let theGuess = sender.titleLabel?.text
         isCorrect = quizModel.isCorrectGuess(guess: theGuess!, question: theQuestion)
@@ -83,37 +114,31 @@ class QuizViewController: UIViewController {
         if isCorrect {
             rightOrWrongLabel.text = "WÖ, rätt!!!!"
             addScoreCount()
+            print("ScoreCount: \(scoreCounter)")
         } else {
             rightOrWrongLabel.text = "Nope"
         }
         
         disableAnswerButtons()
         
-        if questionCounter > 4 {
+        if questionCounter > 0 {
             scoreLabel.text = "Du har \(scoreCounter) poäng av \(questionCounter) frågor. Kul för dig."
         }
-        
-        if questionCounter == 10 {
-            hideButtons()
-        }
-        
     }
     
     func addScoreCount() {
         if scoreCounter < 10 {
             scoreCounter = scoreCounter + 1
-        } else {
-            hideButtons()
         }
     }
     
-    //#warning hide and disable buttons
+    //hide and disable buttons
     func hideButtons() {
         hideAnswerButtons()
         disableAnswerButtons()
     }
     
-    //#warning show and enable buttons
+    //show and enable buttons
     func showButtons() {
         showAnswerButtons()
         enableAnswerbuttons()
@@ -137,7 +162,7 @@ class QuizViewController: UIViewController {
         playAgainButton.isHidden = true
     }
     
-    //disable answer buttons
+    //Disable answer buttons
     func disableAnswerButtons() {
         firstChoice.isEnabled = false
         secondChoice.isEnabled = false

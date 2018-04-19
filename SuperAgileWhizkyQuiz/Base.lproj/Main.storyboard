@@ -27,7 +27,7 @@
                                 </constraints>
                                 <state key="normal" title="PlayAgainBtn?"/>
                                 <connections>
-                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m55-eZ-9IT"/>
+                                    <action selector="playAgainButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wFZ-Bq-JId"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QuestionLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQG-C4-OWk">
@@ -49,6 +49,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52a-8b-zd2">
                                                 <rect key="frame" x="0.0" y="0.0" width="132.5" height="49"/>
                                                 <color key="backgroundColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="Ans1Btn"/>
                                                 <connections>
                                                     <action selector="answerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E3D-RY-gGc"/>
@@ -137,6 +138,7 @@
                     <connections>
                         <outlet property="firstChoice" destination="52a-8b-zd2" id="9vn-mQ-Gb9"/>
                         <outlet property="fourthChoice" destination="vUf-s6-Z8q" id="mIm-Cp-bkG"/>
+                        <outlet property="nextQuestionButton" destination="7gE-re-nDp" id="e6Y-4M-OWl"/>
                         <outlet property="playAgainButton" destination="ZdB-KI-IZo" id="afp-kF-t0A"/>
                         <outlet property="questionLabel" destination="xQG-C4-OWk" id="sxt-kk-iGP"/>
                         <outlet property="rightOrWrongLabel" destination="TVv-0X-XhT" id="2GH-5Y-7SG"/>
