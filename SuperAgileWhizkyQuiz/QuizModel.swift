@@ -8,21 +8,22 @@
 
 import Foundation
 
+
 class QuizModel {
     
-    private var chosenQuestion: NSDictionary!
+    private var chosenQuestion: [[String:String]]!
     
-    private var questionArray: NSMutableArray!
+    private var questionArray: [[[String:String]]]!
     
     init() {
         generateQuestions()
     }
     
-    func isCorrectGuess(guess: String, question: NSDictionary) -> Bool {
+    func isCorrectGuess(guess: String, question: [[String:String]]) -> Bool {
         
         var correctGuessed: Bool = false
         
-        if guess == (question["correctAnswer"] as! String) {
+        if guess == question[5]["Correct"] {
             correctGuessed = true
         } else {
             correctGuessed = false
@@ -31,25 +32,25 @@ class QuizModel {
         return correctGuessed
     }
     
-    func getQuestion() -> NSDictionary {
-        
-        if ((self.chosenQuestion) != nil) {
-            self.questionArray.remove(self.chosenQuestion)
-        }
+    func getQuestion() -> [[String:String]] {
         
         if (self.questionArray.count == 0) {
             generateQuestions()
         }
         
         let indexx: Int = Int(arc4random_uniform(UInt32(self.questionArray.count)))
+        self.chosenQuestion = self.questionArray[indexx]
         
-        self.chosenQuestion = self.questionArray[indexx] as! NSDictionary
+        self.questionArray.remove(at: indexx)
         
         return self.chosenQuestion
     }
     
     func generateQuestions() {
-        // Milja's questions
+        
+        let newQuestion = questions
+        self.questionArray = [newQuestion]
+        
     }
     
 }

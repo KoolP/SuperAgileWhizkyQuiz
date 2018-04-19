@@ -26,6 +26,7 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         scoreCounter = 0
 
+
         //#warning load new question here
         loadNewGame()
         
@@ -110,7 +111,6 @@ class QuizViewController: UIViewController {
         playAgainButton.isEnabled = false
     }
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
