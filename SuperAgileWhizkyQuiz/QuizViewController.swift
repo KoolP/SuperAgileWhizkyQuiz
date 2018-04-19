@@ -23,6 +23,7 @@ class QuizViewController: UIViewController {
     
     var scoreCounter : Int = 0
     var questionCounter : Int = 0
+    var hasGuessed : Bool = false
     var quizModel : QuizModel!
     var theQuestion = [String:String]()
     
@@ -52,9 +53,17 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func newQuestionButton(_ sender: UIButton) {
+        /*
+        if hasGuessed {
+            loadNewQuestionAndAnswers()
+            rightOrWrongLabel.text = ""
+            questionCounter = questionCounter + 1
+        }
+        */
+        
         loadNewQuestionAndAnswers()
-        questionCounter = questionCounter + 1
         rightOrWrongLabel.text = ""
+        questionCounter = questionCounter + 1
         print("QuestionCounter: \(questionCounter)")
         
         if questionCounter == 10 {
