@@ -35,6 +35,7 @@ class QuizViewController: UIViewController {
         secondChoice.designButtons(button: secondChoice)
         thirdChoice.designButtons(button: thirdChoice)
         fourthChoice.designButtons(button: fourthChoice)
+        playAgainButton.designButtons(button: playAgainButton)
         
         firstChoice.setColors(button: firstChoice)
         secondChoice.setColors(button: secondChoice)
@@ -45,9 +46,7 @@ class QuizViewController: UIViewController {
         nextQuestionButton.setColors(button: nextQuestionButton)
         
         rightOrWrongLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
-        //scoreLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
-
-        //#warning load new question here
+        
         loadNewGame()
     }
     
@@ -56,8 +55,8 @@ class QuizViewController: UIViewController {
         quizModel = QuizModel()
         scoreCounter = 0
         questionCounter = 0
-        //showButtons()
         rightOrWrongLabel.text = ""
+        scoreLabel.text = ""
         loadNewQuestionAndAnswers()
         print("ScoreCounter: \(scoreCounter), QuestionCounter: \(questionCounter)")
         scoreLabel.isHidden = false
@@ -67,13 +66,6 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func newQuestionButton(_ sender: UIButton) {
-        /*
-        if hasGuessed {
-            loadNewQuestionAndAnswers()
-            rightOrWrongLabel.text = ""
-            questionCounter = questionCounter + 1
-        }
-        */
         
         loadNewQuestionAndAnswers()
         rightOrWrongLabel.text = ""
@@ -82,12 +74,11 @@ class QuizViewController: UIViewController {
         
         if questionCounter == 10 {
             hideButtons()
-            //scoreLabel.isHidden = true
+            
             nextQuestionButton.isHidden = true
             
             playAgainButton.setTitle("Play again?", for: .normal)
-            //playAgainButton.layer.zPosition = 1
-            //playAgainButton.bringSubview(toFront: self.view)
+            
             self.view.bringSubview(toFront: playAgainButton)
             
             if scoreCounter < 3 {
@@ -103,7 +94,6 @@ class QuizViewController: UIViewController {
     
     func loadNewQuestionAndAnswers() {
         hasGuessed = false
-        //put in QuizModels randomizer with existing game
         showQuestion()
         showButtons()
     }
@@ -115,10 +105,6 @@ class QuizViewController: UIViewController {
         secondChoice.setTitle(theQuestion["Answer02"], for: .normal)
         thirdChoice.setTitle(theQuestion["Answer03"], for: .normal)
         fourthChoice.setTitle(theQuestion["Answer04"], for: .normal)
-        //firstChoice.titleLabel?.text = theQuestion["Answer01"]
-        //secondChoice.titleLabel?.text = theQuestion["Answer02"]
-        //thirdChoice.titleLabel?.text = theQuestion["Answer03"]
-        //fourthChoice.titleLabel?.text = theQuestion["Answer04"]
         print("The question: \(theQuestion)")
     }
     
@@ -140,7 +126,7 @@ class QuizViewController: UIViewController {
         isCorrect = quizModel.isCorrectGuess(guess: theGuess!, question: theQuestion)
         
         if isCorrect {
-            rightOrWrongLabel.text = "WÖ, rätt!!!!"
+            rightOrWrongLabel.text = "Correct!!!"
             addScoreCount()
             print("ScoreCount: \(scoreCounter)")
         } else {
@@ -150,7 +136,7 @@ class QuizViewController: UIViewController {
         disableAnswerButtons()
         
         if questionCounter > 0 {
-            scoreLabel.text = "Du har \(scoreCounter) poäng av \(questionCounter) frågor."
+            scoreLabel.text = "You have \(scoreCounter) out of 10"
         }
     }
     
@@ -210,18 +196,6 @@ class QuizViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
