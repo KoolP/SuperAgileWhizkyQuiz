@@ -36,16 +36,18 @@ class QuizViewController: UIViewController {
         thirdChoice.designButtons(button: thirdChoice)
         fourthChoice.designButtons(button: fourthChoice)
         playAgainButton.designButtons(button: playAgainButton)
-        
+        questionLabel.designLabel2(label: questionLabel)
+        nextQuestionButton.designButtons(button: nextQuestionButton)
+
         firstChoice.setColors(button: firstChoice)
         secondChoice.setColors(button: secondChoice)
         thirdChoice.setColors(button: thirdChoice)
         fourthChoice.setColors(button: fourthChoice)
-        questionLabel.designLabel2(label: questionLabel)
-        
         nextQuestionButton.setColors(button: nextQuestionButton)
+        playAgainButton.setColors(button: playAgainButton)
         
-        rightOrWrongLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
+        //rightOrWrongLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
+       // scoreLabel.textColor = UIColor(red: 243.0/255.0, green: 193.0/255.0, blue: 49.0/255.0, alpha: 0.5)
         
         loadNewGame()
     }
@@ -82,11 +84,11 @@ class QuizViewController: UIViewController {
             self.view.bringSubview(toFront: playAgainButton)
             
             if scoreCounter < 3 {
-                questionLabel.text = "U suck"
+                questionLabel.text = "U know nothing about whisky"
             } else if scoreCounter > 3 && scoreCounter < 6 {
-                questionLabel.text = "U ok"
+                questionLabel.text = "U have basic knowledge about whisky"
             } else {
-                questionLabel.text = "FLINK!"
+                questionLabel.text = "U are amazing!!!"
             }
         }
 
@@ -130,7 +132,7 @@ class QuizViewController: UIViewController {
             addScoreCount()
             print("ScoreCount: \(scoreCounter)")
         } else {
-            rightOrWrongLabel.text = "Nope"
+            rightOrWrongLabel.text = "Wrong"
         }
         
         disableAnswerButtons()
